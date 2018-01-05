@@ -10,11 +10,25 @@ namespace VideoLib.Controllers
 {
     public class MoviesController : Controller
     {
-        // GET: Movies/Random
-        public ActionResult Random()
+        
+        public ActionResult Random()// Good practise to change ActionResult to ViewResult so its easy to unit test later save an extra cast
         {
+            // GET: Movies/Randomx
             var movie = new Movie() { Name = "Shrek!" };
-            return View(movie);
+            
+            //return View(movie);// view is a helper method inherited from the base controller class
+            return Content("Hello World!");
+            
+            //return new ViewResult(); // but above approach is more common is accpeted
+            //PartialViewResult
+            //ContentResult
+            //RedirectResult();
+            //RedirectToRouteResult();
+            //JsonResult();
+            //FileResult();
+            //HttpNotFoundResult();
+            //EmptyResult();
+
         }
     }
 }
