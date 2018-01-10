@@ -16,5 +16,10 @@ namespace VideoLib.Controllers
             var movie = new Movie() { Name = "Shrek!" };
             return View(movie);
         }
+         public ActionResult Edit(int id)
+        {
+            return Content("id=" + id);
+        }
+
     }
 }
